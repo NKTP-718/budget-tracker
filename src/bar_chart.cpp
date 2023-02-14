@@ -32,10 +32,7 @@ void plot_bar( category** cat_list, int noc)
 	{
 		cout<<setw(3)<<i*10<<"|";
 		for( int j = 0; j < noc; j++)
-		{
-			if( i <= ((cat_list[j]->total_expenses/overall_expenses)*10))
-				cout<<" o";
-		}
+			cout<<' '<<(i <= ((cat_list[j]->total_expenses/overall_expenses)*10)?('o'):' ');
 		NEXTLINE;
 	}
 	cout<<"    "<<setw(((noc*2)>30?(noc*2):17)+3)<<setfill('-')<<right<<"-"<<setfill(' ');
